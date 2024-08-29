@@ -65,8 +65,8 @@ export default function Navbar() {
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <ul className="menu min-h-full w-80 bg-white p-4 text-emerald-500">
-              <li className="h-20">
+            <ul className="menu min-h-full w-80 bg-emerald-500 p-4 text-slate-100">
+              <li className="h-20 my-5">
                 <div className="flex items-center justify-start">
                   <div className="px-2">
                     <Link href="/" className="">
@@ -81,20 +81,22 @@ export default function Navbar() {
                       />
                     </Link>
                   </div>
-                  <h3 className="text-md font-bold">YM </h3>
+                  <h3 className="text-md font-bold text-amber-500">
+                    YM Trading Plc
+                  </h3>
                 </div>
               </li>
               {NavbarLinks.map((link) => (
                 <Link href={link.path} key={link.id}>
-                  <li className="text-md my-1 flex flex-row items-center justify-between rounded-md bg-slate-700 px-3 py-3 font-semibold">
+                  <li className="text-md my-1 flex flex-row items-center justify-between rounded-md bg-ember-300 px-3 py-3 font-semibold shadow-sm bg-amber-200 text-emerald-500">
                     {link.title}
-                    {/* <span>
+                    <span>
                       <ChevronRight
-                        className="h-5 w-5 text-white"
+                        className="h-5 w-5 text-emerald-700"
                         width={5}
                         height={5}
                       />
-                    </span> */}
+                    </span>
                   </li>
                 </Link>
               ))}
