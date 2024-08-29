@@ -50,13 +50,13 @@ const ProductListPage = () => {
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         <div className="mx-auto max-w-lg text-center py-10">
           <h2 className="text-3xl font-bold sm:text-4xl text-slate-900">
-            Services We Offer
+            Products We Offer
           </h2>
 
           <p className="mt-4 text-slate-700">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Consequuntur aliquam doloribus nesciunt eos fugiat. Vitae aperiam
-            fugit consequuntur saepe laborum.
+            We are committed to providing exceptional products to our clients.
+            Our team of experts is dedicated to delivering high-quality
+            solutions that meet your unique needs.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
