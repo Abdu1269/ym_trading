@@ -9,17 +9,21 @@ import swrConfig from "@/shared/swrConfig";
 import { SWRConfig } from "swr";
 import About from "./about/page";
 import HomePage from "./home/page";
-
+import OurTeamPage from "@/components/OurTeam";
+import ContactUs from "@/components/ContactUs";
+// import Services from "@/components/servicescomp";
 function page() {
   return (
     <div className="bg-white">
       <SWRConfig value={swrConfig}>
         <HomePage />
+        {/* <Services /> */}
         <Services />
         <ProductListPage />
         <WhyUs />
         <FAQ />
-        <Blogs />
+        <OurTeamPage />
+        <ContactUs />
         <About />
       </SWRConfig>
     </div>

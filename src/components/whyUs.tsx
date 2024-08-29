@@ -45,9 +45,10 @@ const WhyUs = () => {
     <div
       className="bg-white bg-gradient-to-r from-white to-gray-100 min-h-screen py-10"
       title="Why Us"
+      id="whyus"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-emerald-800 bg-gray-200 text-center mx-auto rounded-lg py-8 mb-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold border border-gray-300">
+        <div className="text-emerald-500 text-center mx-auto rounded-lg py-4 mb-10 text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-serif font-bold">
           Why you Choose YM Trading ?
         </div>
 
@@ -66,12 +67,12 @@ const WhyUs = () => {
             {whyUs?.data?.map((item: WhyUsType) => (
               <div
                 key={item.id}
-                className="bg-emerald-800 glass text-primary-content p-6 rounded-lg shadow-md"
+                className="bg-gradient-to-br from-slate-100 to-emerald-300 glass text-primary-content p-6 rounded-lg shadow-md"
               >
-                <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900">
+                <h2 className="text-2xl sm:text-3xl font-semibold text-amber-400 uppercase drop-shadow-lg">
                   {item.title}
                 </h2>
-                <p className="mt-4 text-base sm:text-lg text-gray-700">
+                <p className="mt-4 text-base sm:text-lg text-slate-500">
                   {item.description}
                 </p>
               </div>

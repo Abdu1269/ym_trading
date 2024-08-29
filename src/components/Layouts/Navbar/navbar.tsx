@@ -65,7 +65,7 @@ export default function Navbar() {
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <ul className="menu min-h-full w-80 bg-white p-4 text-base-content">
+            <ul className="menu min-h-full w-80 bg-white p-4 text-emerald-500">
               <li className="h-20">
                 <div className="flex items-center justify-start">
                   <div className="px-2">
@@ -81,9 +81,7 @@ export default function Navbar() {
                       />
                     </Link>
                   </div>
-                  <h3 className="text-md font-bold">
-                    Ministry of Science & Innovation{" "}
-                  </h3>
+                  <h3 className="text-md font-bold">YM </h3>
                 </div>
               </li>
               {NavbarLinks.map((link) => (

@@ -53,84 +53,91 @@ const ContactUs = () => {
       id="contact-us"
       className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 sm:p-8 lg:p-12"
     >
-      <div className="contact-us-card w-full p-5 shadow-lg bg-emerald-900 rounded-md">
+      <div className="contact-us-card w-full p-5 shadow-lg bg-gradient-to-br from-slate-100 to-emerald-400 rounded-md">
         <h2 className="mb-5 text-neutral-950 text-center font-serif text-2xl sm:text-3xl">
           Contact Us
         </h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label className="text-neutral-950 block mb-1" htmlFor="name">
-              Name:
+        <form onSubmit={handleSubmit} className="mt-8 grid grid-rows-2 gap-6">
+          <div className="col-span-6 sm:col-span-3">
+            <label htmlFor="Name" className="text-neutral-950 block mb-1">
+              Name
             </label>
+
             <input
-              className="w-full text-neutral-950 bg-white p-3 border-solid border-midnight rounded-md"
+              title="name"
               type="text"
               id="name"
               name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
+              placeholder="Enter your name"
+              className="mt-1 p-3 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
             />
           </div>
-          <div className="mb-4">
+          <div className="col-span-6 sm:col-span-3">
             <label className="text-neutral-950 block mb-1" htmlFor="email">
               Email:
             </label>
             <input
-              className="w-full bg-white text-neutral-950 p-3 border-solid border-midnight rounded-md"
+              className="mt-1 p-3 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               required
+              placeholder="Enter your email"
             />
           </div>
-          <div className="mb-4">
+          <div className="col-span-6 sm:col-span-3">
             <label className="text-neutral-950 block mb-1" htmlFor="phone">
               Phone:
             </label>
             <input
-              className="w-full bg-white text-neutral-950 p-3 border-solid border-midnight rounded-md"
+              className="mt-1 p-3 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
               type="tel"
               id="phone"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
+              placeholder="Enter your phone number"
             />
           </div>
-          <div className="mb-4">
+          <div className="col-span-6 sm:col-span-3">
             <label className="text-neutral-950 block mb-1" htmlFor="subject">
               Subject:
             </label>
             <input
-              className="w-full bg-white text-neutral-950 p-3 border-solid border-midnight rounded-md"
+              className="mt-1 p-3 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
               type="text"
               id="subject"
               name="subject"
               value={formData.subject}
               onChange={handleChange}
+              placeholder="Enter your subject"
             />
           </div>
-          <div className="mb-4">
+          <div className="col-span-12 sm:col-span-3">
             <label className="text-neutral-950 block mb-1" htmlFor="message">
               Message:
             </label>
             <textarea
-              className="w-full p-3 bg-white text-neutral-950 border-solid border-midnight rounded-md"
+              className="w-full p-3 mt-1 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
               required
+              placeholder="Enter your message"
             ></textarea>
           </div>
-          <button
-            className="w-full md:w-fit p-3 bg-yellow-700 text-white rounded-md cursor-pointer hover:bg-emerald-950"
-            type="submit"
-          >
-            Submit
-          </button>
+
+          <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center w-full px-8 py-2 text-base font-bold leading-6 text-white bg-amber-600 border border-transparent rounded-full md:w-auto hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-600"
+            >
+              Submit
+            </button>
+          </div>
         </form>
         {responseMessage && (
           <p className="text-center mt-5 text-neutral-950">{responseMessage}</p>
@@ -144,7 +151,6 @@ const ContactUs = () => {
           loading="lazy"
           className="border-0 rounded-md"
         ></iframe>
-       
       </div>
     </div>
   );

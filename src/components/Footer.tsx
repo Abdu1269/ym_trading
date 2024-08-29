@@ -2,101 +2,198 @@
 
 import React from "react";
 import Image from "next/image";
-import logo from "@/public/logo.jpg"; // Ensure the path is correct
+import logo from "@/public/logo.png"; // Ensure the path is correct
 import SocialMedias from "./SocialMedias";
-
+import Facebook from "@/public/svgs/facebook.svg";
+import Instagram from "@/public/svgs/instagram.svg";
+import Twitter from "@/public/svgs/twitter.svg";
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-yellow-700 to-emerald-900 text-sky-900 p-6 lg:p-10">
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-8 lg:space-y-0">
-        {/* Logo and Company Info */}
-        <div className="flex flex-col items-center lg:items-start space-y-4 lg:space-y-2">
-          <Image
-            src={logo}
-            alt="Logo"
-            width={150}
-            height={150}
-            className="mb-4"
-          />
-          <p className="text-xl text-neutral-950 font-semibold text-center lg:text-left">
-            YM TRADING PLC
-            <br />
-            Since 1992
-          </p>
-          <SocialMedias />
-        </div>
+    <footer className="bg-emerald-700">
+      <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <div>
+            <div className="text-teal-600">
+              <Image
+                src={logo}
+                alt="Logo"
+                width={150}
+                height={150}
+                className="mb-4"
+              />
+            </div>
 
-        {/* Navigation Links */}
-        <div className="flex flex-col lg:flex-row lg:space-x-12">
-          <nav className="flex flex-col text-white space-y-4 lg:space-y-2">
-            <h6 className="text-lg  font-semibold text-neutral-100">
-              Services
-            </h6>
-            <a className="link link-hover">Import</a>
-            <a className="link link-hover">Export</a>
-            <a className="link link-hover">Commission Works</a>
-          </nav>
+            <ul className="mt-8 flex gap-6">
+              <li>
+                <a
+                  href="#"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="text-gray-700 transition hover:opacity-75"
+                >
+                  <span className="sr-only">Facebook</span>
 
-          <nav className="flex flex-col text-white space-y-4 lg:space-y-2">
-            <h6 className="text-lg font-semibold text-neutral-100">Company</h6>
-            <a className="link link-hover" href="/about">
-              About Us
-            </a>
-            <a className="link link-hover" href="#contact-us">
-              Contact
-            </a>
-          </nav>
+                  <Facebook />
+                </a>
+              </li>
 
-          <nav className="flex flex-col text-white space-y-4 lg:space-y-2">
-            <h6 className="text-lg font-semibold text-neutral-100">Legal</h6>
-            <a className="link link-hover">Terms of Use</a>
-            <a className="link link-hover">Privacy Policy</a>
-          </nav>
-        </div>
+              <li>
+                <a
+                  href="#"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="text-gray-700 transition hover:opacity-75"
+                >
+                  <span className="sr-only">Instagram</span>
 
-        {/* Rating Section */}
-        <div className="flex flex-col items-center space-y-4">
-          <div className="rating rating-lg">
-            <input
-              type="radio"
-              name="rating-9"
-              className="rating-hidden"
-              aria-label="rating-1"
-            />
-            <input
-              type="radio"
-              name="rating-9"
-              className="mask mask-star-2"
-              aria-label="rating-2"
-            />
-            <input
-              type="radio"
-              name="rating-9"
-              className="mask mask-star-2"
-              defaultChecked
-              aria-label="rating-3"
-            />
-            <input
-              type="radio"
-              name="rating-9"
-              className="mask mask-star-2"
-              aria-label="rating-4"
-            />
-            <input
-              title="rating"
-              type="radio"
-              name="rating-9"
-              className="mask mask-star-2"
-            />
-            <input
-              title="rating"
-              type="radio"
-              name="rating-9"
-              className="mask mask-star-2"
-            />
+                  <Instagram />
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="text-gray-700 transition hover:opacity-75"
+                >
+                  <span className="sr-only">Twitter</span>
+
+                  <Twitter />
+                </a>
+              </li>
+            </ul>
           </div>
-          <h1 className="text-lg text-white font-semibold">Rate Us</h1>
+
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
+            <div>
+              <p className=" text-amber-400 font-bold">Services</p>
+
+              <ul className="mt-6 space-y-4 text-sm">
+                <li>
+                  <a
+                    href="#"
+                    className="text-slate-200 transition hover:opacity-75"
+                  >
+                    {" "}
+                    Import{" "}
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="#"
+                    className="text-slate-200 transition hover:opacity-75"
+                  >
+                    {" "}
+                    Export{" "}
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="#"
+                    className="text-slate-200 transition hover:opacity-75"
+                  >
+                    {" "}
+                    Commission Works{" "}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="font-medium text-amber-400">Company</p>
+
+              <ul className="mt-6 space-y-4 text-sm">
+                <li>
+                  <a
+                    href="#"
+                    className="text-slate-200 transition hover:opacity-75"
+                  >
+                    {" "}
+                    About Us{" "}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="font-medium text-amber-400">Helpful Links</p>
+
+              <ul className="mt-6 space-y-4 text-sm">
+                <li>
+                  <a
+                    href="#"
+                    className="text-slate-200 transition hover:opacity-75"
+                  >
+                    {" "}
+                    Contact{" "}
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="#"
+                    className="text-slate-200 transition hover:opacity-75"
+                  >
+                    {" "}
+                    FAQs{" "}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="font-medium text-amber-400">Rate Us</p>
+
+              <div className="rating rating-lg">
+                <input
+                  type="radio"
+                  name="rating-9"
+                  className="rating-hidden"
+                  aria-label="rating-1"
+                />
+                <input
+                  type="radio"
+                  name="rating-9"
+                  className="mask mask-star-2"
+                  aria-label="rating-2"
+                />
+                <input
+                  type="radio"
+                  name="rating-9"
+                  className="mask mask-star-2"
+                  defaultChecked
+                  aria-label="rating-3"
+                />
+                <input
+                  type="radio"
+                  name="rating-9"
+                  className="mask mask-star-2"
+                  aria-label="rating-4"
+                />
+                <input
+                  title="rating"
+                  type="radio"
+                  name="rating-9"
+                  className="mask mask-star-2"
+                />
+                <input
+                  title="rating"
+                  type="radio"
+                  name="rating-9"
+                  className="mask mask-star-2"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+
+        <p className="text-xs text-slate-100">
+          &copy; {new Date().getFullYear()}. YM Trading Plc. All rights
+          reserved.
+        </p>
       </div>
     </footer>
   );

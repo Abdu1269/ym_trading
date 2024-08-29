@@ -9,6 +9,8 @@ import Image from "next/image";
 import Link from "next/link";
 import LoadingPage from "@/components/LoadingPage";
 // // import ErrorPage from "@/components/ErrorPage";
+import ProductCard from "./product-card";
+import { SeeMore } from "./CTA/cta";
 
 const ProductListPage = () => {
   const collection: CollectionQuery = {
@@ -44,48 +46,29 @@ const ProductListPage = () => {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen py-16">
-      <div className="container mx-auto px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-emerald-900 mb-12">
-          Our Products
-        </h2>
-        <p className="text-center text-lg text-gray-700 mb-16">
-          Our company specializes in importing and exporting a diverse range of
-          products.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+    <section className="bg-slate-50" id="product">
+      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+        <div className="mx-auto max-w-lg text-center py-10">
+          <h2 className="text-3xl font-bold sm:text-4xl text-slate-900">
+            Services We Offer
+          </h2>
+
+          <p className="mt-4 text-slate-700">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Consequuntur aliquam doloribus nesciunt eos fugiat. Vitae aperiam
+            fugit consequuntur saepe laborum.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products?.data?.map((product: Product) => (
-            <div
-              key={product.id}
-              className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
-            >
-              <Image
-                alt="product image"
-                src={product.coverPage || "/trade.jpg"}
-                width={500}
-                height={350}
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-emerald-800 mb-2">
-                  <Link href={`/products/detail/${product.id}`}>
-                    {product.name}
-                  </Link>
-                </h3>
-                <p className="text-gray-700 text-base">{product.description}</p>
-              </div>
-            </div>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
         <div className="flex justify-end mt-10">
-          <Link href="/products">
-            <button className="w-full md:w-auto p-2 bg-yellow-700 text-white rounded-md cursor-pointer hover:bg-emerald-950">
-              See More
-            </button>
-          </Link>
+          <SeeMore link="/products" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

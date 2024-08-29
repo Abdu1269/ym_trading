@@ -1,7 +1,9 @@
 "use client";
 
+import { SeeMore } from "@/components/CTA/cta";
 import ErrorPage from "@/components/ErrorPage";
 import LoadingPage from "@/components/LoadingPage";
+import ServicesItem from "@/components/servicescomp";
 import { CollectionQuery } from "@/model/collection.model";
 import { Service } from "@/model/service.model";
 import fetcher from "@/shared/utils/fetcher";
@@ -43,48 +45,77 @@ function Services() {
     return <ErrorPage />;
   }
 
+  console.log(services);
   return (
     <div>
       {pathname === "/services" && <div className="mt-24"></div>}
-      <div className="bg-white min-h-fit glass" title="Services">
-        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-emerald-900 mb-12">
-            Our Services
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
-            {services?.data?.map((service: Service) => (
-              <div key={service.id} className="w-full h-auto">
-                <div className="card w-full h-full bg-white hover:bg-emerald-950 hover:text-white text-black shadow-xl transition duration-300 ease-in-out transform hover:scale-105">
-                  <figure className="h-2/3">
-                    <Image
-                      src={service.coverPage}
-                      alt={service?.name}
-                      width={384}
-                      height={256}
-                      layout="responsive"
-                      className="object-cover w-full h-full"
-                    />
-                  </figure>
-                  <div className="card-body h-1/3 p-4">
-                    <h2 className="card-title hover:font-semibold text-lg sm:text-xl md:text-2xl">
-                      {service.name}
-                    </h2>
-                    <p className="text-sm sm:text-base md:text-lg">
-                      {service.description}
-                    </p>
-                    <div className="card-actions justify-end"></div>
-                  </div>
-                </div>
-              </div>
+      <section className="bg-slate-100">
+        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+          <div className="mx-auto max-w-lg text-center mb-8">
+            <h2 className="text-3xl font-bold sm:text-4xl text-slate-900">
+              Services We Offer
+            </h2>
+
+            <p className="mt-4 text-slate-700">
+              We are committed to providing exceptional services to our clients.
+              Our team of experts is dedicated to delivering high-quality
+              solutions that meet your unique needs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-center px-2 mx-auto">
+            {services.data.map((service: Service) => (
+              <ServicesItem key={service.id} service={service} />
             ))}
           </div>
-          <div className="flex justify-center mt-8">
-            {/* <button className="btn bg-black text-white px-4 py-2 rounded-md hover:bg-emerald-950 transition duration-300 ease-in-out">
-              See More
-            </button> */}
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center justify-center gap-3">
+              <a
+                href="#"
+                className="inline-flex size-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 rtl:rotate-180"
+              >
+                <span className="sr-only">Prev Page</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="size-3"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>
+
+              <p className="text-xs text-gray-900">
+                3<span className="mx-0.25">/</span>
+                {services?.count}
+              </p>
+
+              <a
+                href="#"
+                className="inline-flex size-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 rtl:rotate-180"
+              >
+                <span className="sr-only">Next Page</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="size-3"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

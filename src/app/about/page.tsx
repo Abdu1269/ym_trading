@@ -152,16 +152,6 @@ const About = () => {
           </div>
         </div>
       )}
-
-      {/* <Testimonials /> */}
-      <OurTeam />
-
-      <ContactUs />
-
-      {/* <Testimonials/> */}
-      {/* //<Gallery/>  */}
-      {/* <OurTeam/> */}
-      {/* //<SocialMedias/> */}
     </div>
   );
 };
