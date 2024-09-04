@@ -12,6 +12,7 @@
     "@svgr/webpack": "^8.1.0",
     "axios": "^1.7.5",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.4.0",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "next-compose-plugins": "^2.2.1",

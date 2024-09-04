@@ -12,7 +12,7 @@ export default function ServicesCard({ service }: { service: Service }) {
         <article className="bg-white  p-6 mb-6 shadow transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl rounded-2xl cursor-pointer border">
           <Link
             target="_self"
-            href="/blog/slug"
+            href={`services?id=${service.id}`}
             className="absolute opacity-0 top-0 right-0 left-0 bottom-0"
           ></Link>
           <div className="relative mb-4 rounded-2xl">
@@ -24,9 +24,9 @@ export default function ServicesCard({ service }: { service: Service }) {
               height={300}
             />
 
-            <a
+            <Link
               className="flex justify-center items-center bg-emerald-700 bg-opacity-80 z-10 absolute top-0 left-0 w-full h-full text-white rounded-2xl opacity-0 transition-all duration-300 transform group-hover:scale-105 text-xl group-hover:opacity-100"
-              href="/blog/slug"
+              href={`services?id=${service.id}`}
               target="_self"
               rel="noopener noreferrer"
             >
@@ -45,7 +45,7 @@ export default function ServicesCard({ service }: { service: Service }) {
                   d="M13 5l7 7-7 7M5 5l7 7-7 7"
                 ></path>
               </svg>
-            </a>
+            </Link>
           </div>
           <div className="flex justify-between items-center w-full pb-4 mb-auto">
             <div className="flex items-center">
